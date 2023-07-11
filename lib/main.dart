@@ -20,11 +20,11 @@ class MyApp extends StatelessWidget {
             child: Column(
               children: [
                 const SizedBox(
-                  height: 70,
+                  height: 80,
                 ),
                 Padding(
                   padding: const EdgeInsets.only(
-                    bottom: 50.0,
+                    bottom: 40.0,
                   ),
 
                   // Secret 메뉴 이미지
@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 32),
+                  padding: const EdgeInsets.symmetric(horizontal: 24),
                   child: Row(
                     children: [
                       Container(
@@ -72,7 +72,7 @@ class MyApp extends StatelessWidget {
                               padding: const EdgeInsets.only(top: 8),
                               child: Container(
                                 child: Text(
-                                  "A",
+                                  "의정부부대버거A",
                                   style: TextStyle(
                                       fontSize: 15,
                                       fontWeight: FontWeight.bold,
@@ -100,7 +100,7 @@ class MyApp extends StatelessWidget {
                             padding: const EdgeInsets.only(top: 8),
                             child: Container(
                               child: Text(
-                                "B",
+                                "의정부부대버거B",
                                 style: TextStyle(
                                     fontSize: 15,
                                     fontWeight: FontWeight.bold,
@@ -127,7 +127,7 @@ class MyApp extends StatelessWidget {
                             padding: const EdgeInsets.only(top: 8),
                             child: Container(
                               child: Text(
-                                "C",
+                                "수원왕갈비",
                                 style: TextStyle(
                                     fontSize: 15,
                                     fontWeight: FontWeight.bold,
@@ -161,7 +161,7 @@ class MyApp extends StatelessWidget {
                             padding: const EdgeInsets.only(top: 8),
                             child: Container(
                               child: Text(
-                                "D",
+                                "대구닭강정",
                                 style: TextStyle(
                                     fontSize: 15,
                                     fontWeight: FontWeight.bold,
@@ -190,7 +190,7 @@ class MyApp extends StatelessWidget {
                             padding: const EdgeInsets.only(top: 8),
                             child: Container(
                               child: Text(
-                                "E",
+                                "남양주 닭갈비",
                                 style: TextStyle(
                                     fontSize: 15,
                                     fontWeight: FontWeight.bold,
