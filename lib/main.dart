@@ -17,8 +17,9 @@ class MyApp extends StatelessWidget {
 }
 
 class FirstPage extends StatelessWidget {
-  const FirstPage({Key? key}) : super(key: key);
+  const FirstPage({super.key});
 
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -31,11 +32,11 @@ class FirstPage extends StatelessWidget {
             child: Column(
               children: [
                 const SizedBox(
-                  height: 70,
+                  height: 80,
                 ),
                 Padding(
                   padding: const EdgeInsets.only(
-                    bottom: 50.0,
+                    bottom: 40.0,
                   ),
 
                   // Secret 메뉴 이미지
@@ -45,40 +46,60 @@ class FirstPage extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 32),
+                  padding: const EdgeInsets.symmetric(horizontal: 24),
                   child: Row(
                     children: [
-                      Column(
-                        children: [
-                          ElevatedButton(
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Profile()),
-                              );
-                            },
-                            style:
-                                ElevatedButton.styleFrom(primary: Colors.white),
-                            child: Image.network(
-                              "https://www.fiveguys.co.kr/-/media/public-site/images/menu-images/menu-category-icons/fg-burgers-icon-01.ashx",
-                              height: 100,
-                              width: 60,
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 8),
-                            child: Container(
-                              child: Text(
-                                "A",
-                                style: TextStyle(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.black),
+                      Container(
+                        child: Column(
+                          children: [
+                            // 팀장
+                            ElevatedButton(
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Profile()),
+                                );
+                              },
+                              style: ElevatedButton.styleFrom(
+                                  primary: Colors.white),
+                              child: Stack(
+                                children: [
+                                  Positioned(
+                                    child: Text(
+                                      "(New)",
+                                      style: TextStyle(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.w900,
+                                          color: Colors.red),
+                                      textAlign: TextAlign.center,
+                                    ),
+                                    top: 3,
+                                    left: 4,
+                                    right: 5,
+                                  ),
+                                  Image.network(
+                                    "https://www.fiveguys.co.kr/-/media/public-site/images/menu-images/menu-category-icons/fg-sandwiches-icon-01.ashx",
+                                    height: 100,
+                                    width: 60,
+                                  ),
+                                ],
                               ),
                             ),
-                          ),
-                        ],
+                            Padding(
+                              padding: const EdgeInsets.only(top: 8),
+                              child: Container(
+                                child: Text(
+                                  "의정부부대버거A",
+                                  style: TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.black),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                       Spacer(),
                       Column(
@@ -97,7 +118,7 @@ class FirstPage extends StatelessWidget {
                             padding: const EdgeInsets.only(top: 8),
                             child: Container(
                               child: Text(
-                                "B",
+                                "의정부부대버거B",
                                 style: TextStyle(
                                     fontSize: 15,
                                     fontWeight: FontWeight.bold,
@@ -115,7 +136,7 @@ class FirstPage extends StatelessWidget {
                             style:
                                 ElevatedButton.styleFrom(primary: Colors.white),
                             child: Image.network(
-                              "https://www.fiveguys.co.kr/-/media/public-site/images/menu-images/menu-category-icons/fg-burgers-icon-01.ashx",
+                              "https://www.fiveguys.co.kr/-/media/public-site/images/menu-images/menu-category-icons/fg-dogs-icon-01.ashx",
                               height: 100,
                               width: 60,
                             ),
@@ -124,7 +145,7 @@ class FirstPage extends StatelessWidget {
                             padding: const EdgeInsets.only(top: 8),
                             child: Container(
                               child: Text(
-                                "C",
+                                "수원왕갈비",
                                 style: TextStyle(
                                     fontSize: 15,
                                     fontWeight: FontWeight.bold,
@@ -149,7 +170,7 @@ class FirstPage extends StatelessWidget {
                             style:
                                 ElevatedButton.styleFrom(primary: Colors.white),
                             child: Image.network(
-                              "https://www.fiveguys.co.kr/-/media/public-site/images/menu-images/menu-category-icons/fg-burgers-icon-01.ashx",
+                              "https://www.fiveguys.co.kr/-/media/public-site/images/menu-images/menu-category-icons/fg-fries-icon-01.ashx",
                               height: 100,
                               width: 60,
                             ),
@@ -158,7 +179,7 @@ class FirstPage extends StatelessWidget {
                             padding: const EdgeInsets.only(top: 8),
                             child: Container(
                               child: Text(
-                                "D",
+                                "대구닭강정",
                                 style: TextStyle(
                                     fontSize: 15,
                                     fontWeight: FontWeight.bold,
@@ -178,7 +199,7 @@ class FirstPage extends StatelessWidget {
                             style:
                                 ElevatedButton.styleFrom(primary: Colors.white),
                             child: Image.network(
-                              "https://www.fiveguys.co.kr/-/media/public-site/images/menu-images/menu-category-icons/fg-burgers-icon-01.ashx",
+                              "https://www.fiveguys.co.kr/-/media/public-site/images/menu-images/menu-category-icons/fg-drinks-icon-01.ashx",
                               height: 100,
                               width: 60,
                             ),
@@ -187,7 +208,7 @@ class FirstPage extends StatelessWidget {
                             padding: const EdgeInsets.only(top: 8),
                             child: Container(
                               child: Text(
-                                "E",
+                                "남양주 닭갈비",
                                 style: TextStyle(
                                     fontSize: 15,
                                     fontWeight: FontWeight.bold,
