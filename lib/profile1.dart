@@ -61,7 +61,7 @@ class Profile extends StatelessWidget {
                               height: 26,
                             ),
                             Text(
-                              "N A M E :",
+                              "N A M E : ",
                               style: TextStyle(
                                   fontWeight: FontWeight.w300,
                                   fontSize: 19,
