@@ -42,8 +42,9 @@ class FirstPage extends StatelessWidget {
 
                   // Secret 메뉴 이미지
                   child: Image.network(
-                    "https://enjoyorangecounty.com/wp-content/uploads/2022/12/five-guys-secret-menu-list-1024x1024.jpg.webp",
+                    "https://i.ibb.co/Gnmk7yV/2023-07-11-9-26-14.pngp",
                     height: 400,
+                    fit: BoxFit.fill,
                   ),
                 ),
                 Padding(
@@ -106,7 +107,13 @@ class FirstPage extends StatelessWidget {
                       Column(
                         children: [
                           ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Profile()),
+                              );
+                            },
                             style:
                                 ElevatedButton.styleFrom(primary: Colors.white),
                             child: Image.network(
@@ -133,7 +140,13 @@ class FirstPage extends StatelessWidget {
                       Column(
                         children: [
                           ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Profile()),
+                              );
+                            },
                             style:
                                 ElevatedButton.styleFrom(primary: Colors.white),
                             child: Image.network(
@@ -167,7 +180,13 @@ class FirstPage extends StatelessWidget {
                       Column(
                         children: [
                           ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Profile()),
+                              );
+                            },
                             style:
                                 ElevatedButton.styleFrom(primary: Colors.white),
                             child: Image.network(
@@ -196,7 +215,13 @@ class FirstPage extends StatelessWidget {
                       Column(
                         children: [
                           ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Profile()),
+                              );
+                            },
                             style:
                                 ElevatedButton.styleFrom(primary: Colors.white),
                             child: Image.network(

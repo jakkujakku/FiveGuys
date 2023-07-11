@@ -20,11 +20,11 @@ class Profile extends StatelessWidget {
             );
           },
           child: Text(
-            " Five - Guys ",
+            " FIVE GUYS ",
             style: TextStyle(
                 color: Colors.redAccent,
                 fontWeight: FontWeight.w900,
-                fontSize: 20),
+                fontSize: 30),
           ),
         ),
       ),
@@ -32,7 +32,11 @@ class Profile extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
           child: Container(
-            color: Colors.white,
+            decoration: new BoxDecoration(
+                borderRadius: new BorderRadius.only(
+                    bottomLeft: const Radius.circular(50.0),
+                    bottomRight: const Radius.circular(50.0)),
+                color: Colors.white),
           ),
         ),
         color: Colors.red,
