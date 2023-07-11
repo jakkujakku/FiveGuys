@@ -2,8 +2,21 @@ import 'package:flutter/material.dart';
 
 import 'main.dart';
 
-class Profile extends StatelessWidget {
+class Profile extends StatefulWidget {
   const Profile({Key? key}) : super(key: key);
+
+  @override
+  State<Profile> createState() => _ProfileState();
+}
+
+class _ProfileState extends State<Profile> {
+  List<Map> junwoo = [
+    {'name': 'updated name', 'id': 1, 'value': 9876, 'num': 456.789},
+  ];
+
+  List<Map> chulwoo = [
+    {'name': 'updated name', 'id': 1, 'value': 9876, 'num': 456.789},
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +74,7 @@ class Profile extends StatelessWidget {
                               height: 26,
                             ),
                             Text(
-                              "N A M E : ",
+                              "N A M E : $chulwoo[$name]",
                               style: TextStyle(
                                   fontWeight: FontWeight.w300,
                                   fontSize: 19,
