@@ -30,46 +30,95 @@ class Profile extends StatelessWidget {
       body: Container(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 30),
-          child: Stack(children: [
-            Container(
-              decoration: new BoxDecoration(
-                  borderRadius: new BorderRadius.only(
-                      bottomLeft: const Radius.circular(50.0),
-                      bottomRight: const Radius.circular(50.0)),
-                  color: Colors.white),
-            ),
-            Row(
-              children: [
+          child: Column(
+            children: [
+              Stack(children: [
                 Container(
-                  alignment: MainAxisAlignment.start,
-                  child: Image.network(
-                    "https://static.vecteezy.com/system/resources/previews/020/486/924/original/business-man-silhouette-icon-human-face-portrait-glyph-pictogram-male-personal-profile-icon-men-user-s-avatar-businessman-manager-office-people-sign-isolated-illustration-vector.jpg",
-                    width: 180,
-                  ),
+                  decoration: new BoxDecoration(
+                      borderRadius: new BorderRadius.all(Radius.circular(20)),
+                      color: Colors.white),
+                  height: 150,
                 ),
-                Container(
-                    child: Column(
+                Row(
                   children: [
-                    Text("NAME :"),
-                    SizedBox(
-                      height: 10,
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Container(
+                          child: Image.network(
+                            "https://static.vecteezy.com/system/resources/previews/020/486/924/original/business-man-silhouette-icon-human-face-portrait-glyph-pictogram-male-personal-profile-icon-men-user-s-avatar-businessman-manager-office-people-sign-isolated-illustration-vector.jpg",
+                            width: 100,
+                            height: 150,
+                          ),
+                        ),
+                      ],
                     ),
-                    Text("MBTI :"),
-                    SizedBox(
-                      height: 10,
+                    Container(
+                      child: Column(
+                        children: [
+                          SizedBox(
+                            height: 26,
+                          ),
+                          Text(
+                            "N A M E :",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w300,
+                                fontSize: 19,
+                                wordSpacing: 4),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text(
+                            "M B T I  :",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w300,
+                                fontSize: 20,
+                                wordSpacing: 4),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text(
+                            "D A T E  :",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w300,
+                                fontSize: 19,
+                                wordSpacing: 4),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                        ],
+                      ),
                     ),
-                    Text("DATE :"),
-                    SizedBox(
-                      height: 10,
-                    ),
+                    Divider(
+                      color: Colors.redAccent,
+                    )
                   ],
-                )),
-              ],
-            ),
-          ]),
+                ),
+              ]),
+              SizedBox(
+                height: 30,
+              ),
+              Container(
+                decoration: new BoxDecoration(
+                    borderRadius: new BorderRadius.all(Radius.circular(20)),
+                    color: Colors.white),
+                height: 550,
+              ),
+            ],
+          ),
         ),
         color: Colors.red,
       ),
     );
   }
 }
+
+
+
+
+//only(
+                  //bottomLeft: const Radius.circular(30.0),
+                  //bottomRight: const Radius.circular(30.0)),
