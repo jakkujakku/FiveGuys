@@ -37,31 +37,51 @@ class MyApp extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 32),
                   child: Row(
                     children: [
-                      Column(
-                        children: [
-                          ElevatedButton(
-                            onPressed: () {},
-                            style:
-                                ElevatedButton.styleFrom(primary: Colors.white),
-                            child: Image.network(
-                              "https://www.fiveguys.co.kr/-/media/public-site/images/menu-images/menu-category-icons/fg-burgers-icon-01.ashx",
-                              height: 100,
-                              width: 60,
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 8),
-                            child: Container(
-                              child: Text(
-                                "A",
-                                style: TextStyle(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.black),
+                      Container(
+                        child: Column(
+                          children: [
+                            // 팀장
+                            ElevatedButton(
+                              onPressed: () {},
+                              style: ElevatedButton.styleFrom(
+                                  primary: Colors.white),
+                              child: Stack(
+                                children: [
+                                  Positioned(
+                                    child: Text(
+                                      "(New)",
+                                      style: TextStyle(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.w900,
+                                          color: Colors.red),
+                                      textAlign: TextAlign.center,
+                                    ),
+                                    top: 3,
+                                    left: 4,
+                                    right: 5,
+                                  ),
+                                  Image.network(
+                                    "https://www.fiveguys.co.kr/-/media/public-site/images/menu-images/menu-category-icons/fg-sandwiches-icon-01.ashx",
+                                    height: 100,
+                                    width: 60,
+                                  ),
+                                ],
                               ),
                             ),
-                          ),
-                        ],
+                            Padding(
+                              padding: const EdgeInsets.only(top: 8),
+                              child: Container(
+                                child: Text(
+                                  "A",
+                                  style: TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.black),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                       Spacer(),
                       Column(
@@ -98,7 +118,7 @@ class MyApp extends StatelessWidget {
                             style:
                                 ElevatedButton.styleFrom(primary: Colors.white),
                             child: Image.network(
-                              "https://www.fiveguys.co.kr/-/media/public-site/images/menu-images/menu-category-icons/fg-burgers-icon-01.ashx",
+                              "https://www.fiveguys.co.kr/-/media/public-site/images/menu-images/menu-category-icons/fg-dogs-icon-01.ashx",
                               height: 100,
                               width: 60,
                             ),
@@ -132,7 +152,7 @@ class MyApp extends StatelessWidget {
                             style:
                                 ElevatedButton.styleFrom(primary: Colors.white),
                             child: Image.network(
-                              "https://www.fiveguys.co.kr/-/media/public-site/images/menu-images/menu-category-icons/fg-burgers-icon-01.ashx",
+                              "https://www.fiveguys.co.kr/-/media/public-site/images/menu-images/menu-category-icons/fg-fries-icon-01.ashx",
                               height: 100,
                               width: 60,
                             ),
@@ -161,7 +181,7 @@ class MyApp extends StatelessWidget {
                             style:
                                 ElevatedButton.styleFrom(primary: Colors.white),
                             child: Image.network(
-                              "https://www.fiveguys.co.kr/-/media/public-site/images/menu-images/menu-category-icons/fg-burgers-icon-01.ashx",
+                              "https://www.fiveguys.co.kr/-/media/public-site/images/menu-images/menu-category-icons/fg-drinks-icon-01.ashx",
                               height: 100,
                               width: 60,
                             ),
