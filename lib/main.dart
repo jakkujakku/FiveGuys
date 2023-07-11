@@ -1,3 +1,4 @@
+import 'package:fiveguys/profile1.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -225,22 +226,6 @@ class FirstPage extends StatelessWidget {
             ),
           ),
         ),
-      ),
-    );
-  }
-}
-
-class Profile extends StatelessWidget {
-  const Profile({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("프로필"),
-      ),
-      body: Center(
-        child: Text("프로필 페이지"),
       ),
     );
   }
