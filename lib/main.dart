@@ -1,6 +1,7 @@
+import 'package:fiveguys/profile.dart';
 import 'package:fiveguys/profile1.dart';
 import 'package:flutter/material.dart';
-import 'profile.dart';
+import 'package:fiveguys/profile1.dart';
 
 void main() {
   runApp(const MyApp());
@@ -109,18 +110,18 @@ class FirstPage extends StatelessWidget {
                         children: [
                           ElevatedButton(
                             onPressed: () {
-                              String currentTitle =
-                                  "의정부부대거A"; // Replace with the actual current title of the button
-                              if (currentTitle == "dksud") {
-                                pattern => value,
-                              }) {
-                                pattern => value,
-                              }) {
-                                Profile; // Example title A
-                                Text("Title B"); // Example title B
-                              } else {
-                                Text("Default Title"); // Example default title
-                              }
+                              // String currentTitle ==
+                              //     "의정부부대거A"; // Replace with the actual current title of the button
+                              // if (currentTitle == "dksud") {
+                              //   pattern => value,
+                              // }) {
+                              //   pattern => value,
+                              // }) {
+                              //   Profile; // Example title A
+                              //   Text("Title B"); // Example title B
+                              // } else {
+                              //   Text("Default Title"); // Example default title
+                              // }
 
                               Navigator.push(
                                 context,

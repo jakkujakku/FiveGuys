@@ -1,3 +1,4 @@
+import 'package:fiveguys/profile.dart';
 import 'package:flutter/material.dart';
 
 import 'main.dart';
@@ -9,15 +10,15 @@ class Profile extends StatefulWidget {
   State<Profile> createState() => _ProfileState();
 }
 
+// List<dynamic> list = List<dynamic>(); // List타입 변수 초기화
+
+Map<String, String> hawaiianBeaches = {
+  'MBTI': 'ENTJ',
+  'Big Island': 'Wailea Bay',
+  'Kauai': 'Hanalei',
+};
+
 class _ProfileState extends State<Profile> {
-  List<Map> junwoo = [
-    {'name': 'updated name', 'id': 1, 'value': 9876, 'num': 456.789},
-  ];
-
-  List<Map> chulwoo = [
-    {'name': 'updated name', 'id': 1, 'value': 9876, 'num': 456.789},
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,7 +75,7 @@ class _ProfileState extends State<Profile> {
                               height: 26,
                             ),
                             Text(
-                              "N A M E : ",
+                              "N A M E : ${hawaiianBeaches['MBTI']}",
                               style: TextStyle(
                                   fontWeight: FontWeight.w300,
                                   fontSize: 19,
