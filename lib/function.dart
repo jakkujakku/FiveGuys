@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
 import 'main.dart';
-import 'profile1.dart';
+import 'profile.dart';
 
 Future<Container> gyesungContainer() async {
   Map<String, String> gyesung = {

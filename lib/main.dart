@@ -43,6 +43,7 @@ class FirstPage extends StatelessWidget {
                     fit: BoxFit.fill,
                   ),
                 ),
+                // 의정부부대버거A 버튼
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 24),
                   child: Row(
@@ -100,6 +101,7 @@ class FirstPage extends StatelessWidget {
                               width: 60,
                             ),
                           ),
+                          // 의정부부대버거B 버튼
                           Padding(
                             padding: const EdgeInsets.only(top: 8),
                             child: Container(
@@ -118,6 +120,7 @@ class FirstPage extends StatelessWidget {
                     ],
                   ),
                 ),
+                // 대구 닭강정 버튼
                 Padding(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 80, vertical: 16),
