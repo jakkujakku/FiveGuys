@@ -1,4 +1,6 @@
+import 'package:fiveguys/edit.dart';
 import 'package:flutter/material.dart';
+import 'edit.dart';
 
 void main() {
   runApp(const MyApp());
@@ -283,7 +285,10 @@ class _ProfileState extends State<Profile> {
             icon: Icon(Icons.edit),
             color: Colors.redAccent,
             onPressed: () {
-              print("Edit 버튼 눌렀다.");
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => edit()),
+              );
             },
           ),
         ],
