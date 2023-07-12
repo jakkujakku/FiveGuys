@@ -110,10 +110,13 @@ class FirstPage extends StatelessWidget {
                           ElevatedButton(
                             onPressed: () {
                               String currentTitle =
-                                  "Title A"; // Replace with the actual current title of the button
-                              if (currentTitle == "Title A") {
-                                // Show specific titles based on the current title
-                                Text("Title A"); // Example title A
+                                  "의정부부대거A"; // Replace with the actual current title of the button
+                              if (currentTitle == "dksud") {
+                                pattern => value,
+                              }) {
+                                pattern => value,
+                              }) {
+                                Profile; // Example title A
                                 Text("Title B"); // Example title B
                               } else {
                                 Text("Default Title"); // Example default title
