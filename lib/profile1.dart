@@ -74,7 +74,7 @@ class _ProfileState extends State<Profile> {
                               height: 26,
                             ),
                             Text(
-                              "N A M E : $chulwoo[$name]",
+                              "N A M E : ",
                               style: TextStyle(
                                   fontWeight: FontWeight.w300,
                                   fontSize: 19,

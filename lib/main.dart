@@ -1,5 +1,6 @@
 import 'package:fiveguys/profile1.dart';
 import 'package:flutter/material.dart';
+import 'profile.dart';
 
 void main() {
   runApp(const MyApp());
@@ -108,6 +109,16 @@ class FirstPage extends StatelessWidget {
                         children: [
                           ElevatedButton(
                             onPressed: () {
+                              String currentTitle =
+                                  "Title A"; // Replace with the actual current title of the button
+                              if (currentTitle == "Title A") {
+                                // Show specific titles based on the current title
+                                Text("Title A"); // Example title A
+                                Text("Title B"); // Example title B
+                              } else {
+                                Text("Default Title"); // Example default title
+                              }
+
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
