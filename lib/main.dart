@@ -49,6 +49,7 @@ class FirstPage extends StatelessWidget {
                     children: [
                       Column(
                         children: [
+                          //팀장
                           ElevatedButton(
                             onPressed: () {
                               Navigator.push(
@@ -114,6 +115,40 @@ class FirstPage extends StatelessWidget {
                           ),
                         ],
                       ),
+                      Spacer(),
+                      Column(
+                        children: [
+                          ElevatedButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        Profile(foodName: "수원왕갈비버거")),
+                              );
+                            },
+                            style:
+                                ElevatedButton.styleFrom(primary: Colors.white),
+                            child: Image.network(
+                              "https://www.fiveguys.co.kr/-/media/public-site/images/menu-images/menu-category-icons/fg-dogs-icon-01.ashx",
+                              height: 100,
+                              width: 60,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 8),
+                            child: Container(
+                              child: Text(
+                                "수원왕갈비버거",
+                                style: TextStyle(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black),
+                              ),
+                            ),
+                          ),
+                        ],
+                      )
                       // ...
                     ],
                   ),
@@ -239,6 +274,15 @@ class _ProfileState extends State<Profile> {
         };
         break;
 
+      case "수원왕갈비버거":
+        foodDetails = {
+          'Name': '왕갈비',
+          'Date': '2023.11.30',
+          'Taste': '담백한맛',
+          'Origin': '서울',
+        };
+        break;
+
       case "대구닭강정":
         foodDetails = {
           'Name': '닭강정',
@@ -301,7 +345,7 @@ class _ProfileState extends State<Profile> {
       body: SingleChildScrollView(
         child: Container(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 30),
+            padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 30),
             child: Column(
               children: [
                 Stack(
@@ -309,36 +353,33 @@ class _ProfileState extends State<Profile> {
                     Container(
                       decoration: new BoxDecoration(
                         borderRadius: new BorderRadius.all(
-                          Radius.circular(20),
+                          Radius.circular(120),
                         ),
                         color: Colors.white,
                       ),
-                      height: 150,
-                    ),
-                    Row(
-                      children: [
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.only(
-                                left: 16.0,
-                                right: 10.0,
-                                top: 16.0,
-                              ),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(50.0),
-                                child: Image.network(
-                                  "https://avatars.githubusercontent.com/u/89556301?v=4",
-                                  width: 100,
-                                  height: 100,
-                                  fit: BoxFit.cover,
-                                ),
+                      height: 240,
+                      width: 240,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.only(
+                              left: 10.0,
+                              right: 10.0,
+                              top: 9.0,
+                            ),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(110.0),
+                              child: Image.network(
+                                "https://avatars.githubusercontent.com/u/89556301?v=4",
+                                width: 220,
+                                height: 220,
+                                fit: BoxFit.cover,
                               ),
                             ),
-                          ],
-                        ),
-                      ],
+                          ),
+                        ],
+                      ),
                     ),
                     Divider(
                       color: Colors.redAccent,
@@ -359,7 +400,7 @@ class _ProfileState extends State<Profile> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       SizedBox(
-                        height: 26,
+                        height: 28,
                       ),
                       Text(
                         "이름 : ${foodDetails['Name']}",
