@@ -26,7 +26,7 @@ class _ProfileState extends State<Profile> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // Back버튼
+        // Back버튼 생성
         leading: BackButton(
           color: Colors.redAccent,
           onPressed: () {
@@ -36,6 +36,7 @@ class _ProfileState extends State<Profile> {
             );
           },
         ),
+        // Edit 버튼 생성
         actions: [
           IconButton(
               icon: Icon(Icons.edit),
@@ -56,10 +57,23 @@ class _ProfileState extends State<Profile> {
       ),
       body: SingleChildScrollView(
         child: Container(
+          color: Colors.red,
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 30),
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 50),
             child: Column(
               children: [
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 40),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(150.0),
+                    child: Image.network(
+                      "https://avatars.githubusercontent.com/u/89556301?v=4",
+                      width: 300,
+                      height: 300,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
                 Stack(children: [
                   Container(
                     decoration: new BoxDecoration(
@@ -75,15 +89,15 @@ class _ProfileState extends State<Profile> {
                           Padding(
                             padding: EdgeInsets.only(
                                 left: 16.0, right: 10.0, top: 16.0),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(50.0),
-                              child: Image.network(
-                                "https://avatars.githubusercontent.com/u/89556301?v=4",
-                                width: 100,
-                                height: 100,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
+                            // child: ClipRRect(
+                            //   borderRadius: BorderRadius.circular(50.0),
+                            //   child: Image.network(
+                            //     "https://avatars.githubusercontent.com/u/89556301?v=4",
+                            //     width: 100,
+                            //     height: 100,
+                            //     fit: BoxFit.cover,
+                            //   ),
+                            // ),
                           ),
                         ],
                       ),
@@ -134,27 +148,17 @@ class _ProfileState extends State<Profile> {
                   ),
                 ]),
                 SizedBox(
-                  height: 30,
-                ),
-                Container(
-                  decoration: new BoxDecoration(
-                      borderRadius: new BorderRadius.all(Radius.circular(20)),
-                      color: Colors.white),
-                  height: 550,
+                  height: 150,
                 ),
               ],
             ),
           ),
-          color: Colors.red,
         ),
       ),
     );
   }
 }
 
-
-
-
 //only(
-                  //bottomLeft: const Radius.circular(30.0),
-                  //bottomRight: const Radius.circular(30.0)),
+//bottomLeft: const Radius.circular(30.0),
+//bottomRight: const Radius.circular(30.0)),
