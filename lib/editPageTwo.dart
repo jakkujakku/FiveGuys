@@ -6,7 +6,7 @@ import 'main.dart';
 import 'dart:convert';
 
 class EditPage extends StatelessWidget {
-  final Map<String, String> foodDetails;
+  // final Map<String, String> foodDetails;
   final TextEditingController nameController;
   final TextEditingController manufactureDateController;
   final TextEditingController date;
@@ -15,16 +15,24 @@ class EditPage extends StatelessWidget {
 
   const EditPage({
     Key? key,
-    required this.foodDetails,
+    // required this.foodDetails,
     required this.nameController,
     required this.manufactureDateController,
     required this.date,
     required this.origin,
     required this.nutritionalInformation,
+    required Map<String, String> foodDetails,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    var foodDetails = Provider.of<FoodDetails>(context).details;
+    nameController.text = foodDetails['이름'] ?? '';
+    manufactureDateController.text = foodDetails['제조년월'] ?? '';
+    date.text = foodDetails['성분'] ?? '';
+    origin.text = foodDetails['원산지'] ?? '';
+    nutritionalInformation.text = foodDetails['영양정보'] ?? '';
+
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -62,11 +70,11 @@ class EditPage extends StatelessWidget {
                         fit: BoxFit.cover,
                       ),
                     ),
-                    Image(
-                      image: NetworkImage(''),
-                      width: 10,
-                      height: 10,
-                    ),
+                    // Image(
+                    //   image: NetworkImage(''),
+                    //   width: 10,
+                    //   height: 10,
+                    // ),
                     Padding(
                       padding: const EdgeInsets.symmetric(
                         horizontal: 0,
