@@ -214,7 +214,9 @@ class _ProfileState extends State<Profile> {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(10),
                           child: ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              launchUrl(Uri.parse("${foodDetails["벨로그"]}"));
+                            },
                             child: Image.network(
                               'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXqDKyfbUJ3bsDc5tPovwsAHicZqq5HIMDYPvmRzpdmg&s',
                               width: 20,
@@ -233,7 +235,9 @@ class _ProfileState extends State<Profile> {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(10),
                           child: ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              launchUrl(Uri.parse("${foodDetails["깃허브"]}"));
+                            },
                             child: Image.network(
                               'https://velog.velcdn.com/images/velog/profile/9aa07f66-5fcd-41f4-84f2-91d73afcec28/green%20favicon.png',
                               width: 20,

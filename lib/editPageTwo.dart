@@ -91,11 +91,6 @@ class _EditPageState extends State<EditPage> {
                         fit: BoxFit.cover,
                       ),
                     ),
-                    Image(
-                      image: NetworkImage(''),
-                      width: 10,
-                      height: 10,
-                    ),
                     Padding(
                       padding: const EdgeInsets.symmetric(
                           horizontal: 0, vertical: 40),
