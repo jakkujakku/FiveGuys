@@ -88,7 +88,7 @@ class _ProfileState extends State<Profile> {
           '원산지': '수원',
           '영양정보': 'Protein',
           '깃허브': 'https://github.com/jakkujakku/FiveGuys',
-          '벨로그': 'https://user2rum.tistory.com/ ',
+          '벨로그': 'https://velog.io/@user2rum',
         };
         break;
 
