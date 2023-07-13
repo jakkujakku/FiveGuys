@@ -15,6 +15,8 @@ class Profile extends StatefulWidget {
 class _ProfileState extends State<Profile> {
   Map<String, String> foodDetails = {};
 
+  get https => null;
+
   @override
   void initState() {
     super.initState();
@@ -22,6 +24,7 @@ class _ProfileState extends State<Profile> {
     switch (widget.foodName) {
       case "의정부부대버거A":
         foodDetails = {
+          '이미지': 'https://i.ibb.co/NmyHtQc/2023-07-12-8-37-55.jpg',
           '이름': '조계성',
           '제조년월': '1998.01.05',
           '성분': 'INTJ',
@@ -150,8 +153,8 @@ class _ProfileState extends State<Profile> {
                               ),
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(150.0),
-                                child: Image.network(
-                                  "https://avatars.githubusercontent.com/u/89556301?v=4",
+                                child: Image(
+                                  image: NetworkImage("${foodDetails["이미지"]}"),
                                   width: 280,
                                   height: 280,
                                   fit: BoxFit.cover,
