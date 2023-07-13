@@ -119,7 +119,7 @@ class CButton extends StatelessWidget {
               context,
               MaterialPageRoute(
                 builder: (context) => Profile(
-                  foodName: "대구닭강정",
+                  foodName: "대구따로버거",
                   foodDetails: {},
                 ),
               ),

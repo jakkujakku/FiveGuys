@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'foodDetail.dart';
 import 'main.dart';
+import 'dart:convert';
 
 class EditPage extends StatelessWidget {
   final Map<String, String> foodDetails;
@@ -166,6 +167,9 @@ class EditPage extends StatelessWidget {
 
                             Provider.of<FoodDetails>(context, listen: false)
                                 .details = updatedFoodDetails;
+
+                            String json = jsonEncode(updatedFoodDetails);
+                            print(json);
 
                             Navigator.pop(context, updatedFoodDetails);
                           },
