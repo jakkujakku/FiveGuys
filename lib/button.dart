@@ -19,10 +19,27 @@ class AButton extends StatelessWidget {
             );
           },
           style: ElevatedButton.styleFrom(primary: Colors.white),
-          child: Image.network(
-            "https://www.fiveguys.co.kr/-/media/public-site/images/menu-images/menu-category-icons/fg-sandwiches-icon-01.ashx",
-            height: 100,
-            width: 60,
+          child: Stack(
+            children: [
+              Positioned(
+                child: Text(
+                  "(New)",
+                  style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w900,
+                      color: Colors.red),
+                  textAlign: TextAlign.center,
+                ),
+                top: 8,
+                left: 4,
+                right: 5,
+              ),
+              Image.network(
+                "https://www.fiveguys.co.kr/-/media/public-site/images/menu-images/menu-category-icons/fg-sandwiches-icon-01.ashx",
+                height: 100,
+                width: 60,
+              ),
+            ],
           ),
         ),
         Padding(
