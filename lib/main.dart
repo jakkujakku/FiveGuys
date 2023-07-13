@@ -38,7 +38,7 @@ class FirstPage extends StatelessWidget {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(
-                    bottom: 40.0,
+                    bottom: 60.0,
                   ),
                   child: Image.network(
                     "https://i.ibb.co/Gnmk7yV/2023-07-11-9-26-14.pngp",
@@ -60,16 +60,9 @@ class FirstPage extends StatelessWidget {
                 ),
                 Padding(
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 80, vertical: 16),
+                      const EdgeInsets.symmetric(horizontal: 80, vertical: 30),
                   child: Row(
-                    children: [
-                      Spacer(
-                        flex: 1,
-                      ),
-                      EButton(),
-                      Spacer(),
-                      DButton()
-                    ],
+                    children: [EButton(), Spacer(), DButton()],
                   ),
                 )
               ],

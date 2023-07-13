@@ -1,6 +1,7 @@
+import 'package:fiveguys/editPageTwo.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+import 'editPageTwo.dart';
 import 'editPage.dart';
 
 class Profile extends StatefulWidget {
@@ -14,6 +15,8 @@ class Profile extends StatefulWidget {
 
 class _ProfileState extends State<Profile> {
   Map<String, String> foodDetails = {};
+
+  get https => null;
 
   @override
   void initState() {
@@ -96,7 +99,7 @@ class _ProfileState extends State<Profile> {
           leading: BackButton(
             color: Colors.redAccent,
             onPressed: () {
-              Navigator.pop(context);
+              Navigator.pop(context, foodDetails);
             },
           ),
           actions: [
@@ -106,11 +109,21 @@ class _ProfileState extends State<Profile> {
                 size: 30,
               ),
               color: Colors.redAccent,
-              onPressed: () {
-                Navigator.push(
+              onPressed: () async {
+                final result = await Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => edit()),
+                  MaterialPageRoute(
+                    builder: (context) => EditPage(
+                      foodDetails: foodDetails,
+                    ),
+                  ),
                 );
+                // 반환된 값을 확인하고, 있다면 foodDetails를 업데이트합니다.
+                if (result != null) {
+                  setState(() {
+                    foodDetails = result;
+                  });
+                }
               },
             ),
           ],
