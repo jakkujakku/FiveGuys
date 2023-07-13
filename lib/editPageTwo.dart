@@ -91,10 +91,14 @@ class _EditPageState extends State<EditPage> {
                         fit: BoxFit.cover,
                       ),
                     ),
-                    Image(
-                      image: NetworkImage(''),
-                      width: 10,
-                      height: 10,
+                    Padding(
+                      padding: const EdgeInsets.only(left: 320, top: 300),
+                      child: Image(
+                        image: NetworkImage(
+                            'https://cdn.discordapp.com/attachments/1128561724249886777/1129003548739387392/image.png'),
+                        width: 200,
+                        height: 200,
+                      ),
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(
@@ -161,7 +165,7 @@ class _EditPageState extends State<EditPage> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(top: 330),
+                      padding: const EdgeInsets.only(top: 280, left: 260),
                       child: Center(
                         child: ElevatedButton(
                           style: ButtonStyle(
