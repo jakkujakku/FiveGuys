@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'editPageTwo.dart';
 import 'editPage.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Profile extends StatefulWidget {
   final String foodName;
@@ -32,6 +33,8 @@ class _ProfileState extends State<Profile> {
           '성분': 'INTJ',
           '원산지': '의정부',
           '영양정보': 'Omega3',
+          '깃허브': 'https://github.com/jakkujakku/FiveGuys',
+          '벨로그': "https://velog.io/@cheshire0105/about",
         };
         break;
 
@@ -43,6 +46,8 @@ class _ProfileState extends State<Profile> {
           '성분': 'INTP',
           '원산지': '의정부',
           '영양정보': 'Carbohyrate',
+          '깃허브': 'https://github.com/jakkujakku/FiveGuys',
+          '벨로그': 'https://velog.io/@churoo',
         };
         break;
 
@@ -54,6 +59,8 @@ class _ProfileState extends State<Profile> {
           '성분': 'ENTJ',
           '원산지': '대구',
           '영양정보': 'Iron content',
+          '깃허브': 'https://github.com/jakkujakku/FiveGuys',
+          '벨로그': "https://velog.io/@jakkujakku98",
         };
         break;
 
@@ -66,6 +73,8 @@ class _ProfileState extends State<Profile> {
           '성분': 'ENFJ',
           '원산지': '남양주',
           '영양정보': 'Hemoglobin',
+          '깃허브': 'https://github.com/jakkujakku/FiveGuys',
+          '벨로그': "https://velog.io/@code_dang",
         };
         break;
 
@@ -78,6 +87,8 @@ class _ProfileState extends State<Profile> {
           '성분': 'INFP',
           '원산지': '수원',
           '영양정보': 'Protein',
+          '깃허브': 'https://github.com/jakkujakku/FiveGuys',
+          '벨로그': 'https://user2rum.tistory.com/ ',
         };
         break;
 
@@ -104,8 +115,12 @@ class _ProfileState extends State<Profile> {
         ),
         actions: [
           IconButton(
-            icon: Icon(Icons.edit),
+            icon: Icon(
+              CupertinoIcons.pencil_ellipsis_rectangle,
+              size: 30,
+            ),
             color: Colors.redAccent,
+            iconSize: 30,
             onPressed: () async {
               final result = await Navigator.push(
                 context,
@@ -188,6 +203,56 @@ class _ProfileState extends State<Profile> {
                 ),
                 SizedBox(
                   height: 30,
+                ),
+                // 깃허브 아이콘
+                Padding(
+                  padding: const EdgeInsets.only(left: 260, bottom: 8),
+                  child: Row(
+                    children: [
+                      // 깃허브 아이콘
+                      Padding(
+                        padding: const EdgeInsets.only(right: 8),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child: ElevatedButton(
+                            onPressed: () {
+                              launchUrl(Uri.parse("${foodDetails["깃허브"]})"));
+                            },
+                            child: Image.network(
+                              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXqDKyfbUJ3bsDc5tPovwsAHicZqq5HIMDYPvmRzpdmg&s',
+                              width: 20,
+                              height: 20,
+                              fit: BoxFit.contain,
+                            ),
+                            style: ButtonStyle(
+                                backgroundColor:
+                                    MaterialStateProperty.all(Colors.white)),
+                          ),
+                        ),
+                      ),
+                      // velog 아이콘
+                      Padding(
+                        padding: const EdgeInsets.only(right: 8),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child: ElevatedButton(
+                            onPressed: () {
+                              launchUrl(Uri.parse("${foodDetails["벨로그"]})"));
+                            },
+                            child: Image.network(
+                              'https://velog.velcdn.com/images/velog/profile/9aa07f66-5fcd-41f4-84f2-91d73afcec28/green%20favicon.png',
+                              width: 20,
+                              height: 20,
+                              fit: BoxFit.contain,
+                            ),
+                            style: ButtonStyle(
+                                backgroundColor:
+                                    MaterialStateProperty.all(Colors.white)),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
                 Center(
                   child: Stack(
