@@ -60,6 +60,27 @@ class _EditPageState extends State<EditPage> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.white,
+        leading: IconButton(
+            onPressed: () {
+              setState(() {
+                // TextField의 값을 가져와 foodDetails를 수정합니다.
+                foodDetails['이름'] = nameController.text;
+                foodDetails['제조년월'] = manufactureDateController.text;
+                foodDetails['성분'] = date.text;
+                foodDetails['원산지'] = origin.text;
+                foodDetails['영양정보'] = nutritionalInformation.text;
+
+                // TODO: 필요한 경우 다른 항목을 수정합니다.
+              });
+              Navigator.pop(context, foodDetails);
+            },
+            icon: Text(
+              "Done",
+              style: TextStyle(
+                  color: Colors.redAccent,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15),
+            )),
         title: Text(
           'Order Memo',
           style: TextStyle(
@@ -165,20 +186,12 @@ class _EditPageState extends State<EditPage> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(top: 280, left: 260),
+                      padding: const EdgeInsets.only(top: 290, left: 210),
                       child: Center(
-                        child: ElevatedButton(
-                          style: ButtonStyle(
-                            backgroundColor:
-                                MaterialStateProperty.all(Colors.white),
-                          ),
-                          child: Text(
-                            '저장',
-                            style: TextStyle(
-                                color: Colors.redAccent,
-                                fontWeight: FontWeight.w900,
-                                fontSize: 20),
-                          ),
+                        child: IconButton(
+                          icon: Icon(Icons.check),
+                          iconSize: 40,
+                          color: const Color.fromARGB(255, 47, 230, 53),
                           onPressed: () {
                             setState(() {
                               // TextField의 값을 가져와 foodDetails를 수정합니다.
