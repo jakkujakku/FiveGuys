@@ -1,12 +1,18 @@
-import 'package:fiveguys/button.dart';
-import 'package:fiveguys/editPage.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'FoodModel.dart';
 import 'editPage.dart';
 import 'editPageTwo.dart';
+import 'button.dart';
+import 'profille.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => FoodModel(),
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -26,56 +32,53 @@ class FirstPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 8.0),
-          child: Padding(
-            padding: const EdgeInsets.only(bottom: 16.0),
-            child: Column(
-              children: [
-                const SizedBox(
-                  height: 80,
+    return Scaffold(
+      body: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 8.0),
+        child: Padding(
+          padding: const EdgeInsets.only(bottom: 16.0),
+          child: Column(
+            children: [
+              const SizedBox(
+                height: 80,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(
+                  bottom: 40.0,
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(
-                    bottom: 40.0,
-                  ),
-                  child: Image.network(
-                    "https://i.ibb.co/Gnmk7yV/2023-07-11-9-26-14.pngp",
-                    height: 400,
-                    fit: BoxFit.fill,
-                  ),
+                child: Image.network(
+                  "https://i.ibb.co/Gnmk7yV/2023-07-11-9-26-14.pngp",
+                  height: 400,
+                  fit: BoxFit.fill,
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 24),
-                  child: Row(
-                    children: [
-                      AButton(),
-                      Spacer(),
-                      BButton(),
-                      Spacer(),
-                      CButton(),
-                    ],
-                  ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 24),
+                child: Row(
+                  children: [
+                    AButton(),
+                    Spacer(),
+                    BButton(),
+                    Spacer(),
+                    CButton(),
+                  ],
                 ),
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 80, vertical: 16),
-                  child: Row(
-                    children: [
-                      Spacer(
-                        flex: 1,
-                      ),
-                      EButton(),
-                      Spacer(),
-                      DButton()
-                    ],
-                  ),
-                )
-              ],
-            ),
+              ),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 80, vertical: 16),
+                child: Row(
+                  children: [
+                    Spacer(
+                      flex: 1,
+                    ),
+                    EButton(),
+                    Spacer(),
+                    DButton()
+                  ],
+                ),
+              )
+            ],
           ),
         ),
       ),
