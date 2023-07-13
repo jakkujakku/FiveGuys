@@ -58,47 +58,138 @@ class _EditPageState extends State<EditPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Edit Page'),
+        elevation: 0,
+        backgroundColor: Colors.white,
+        title: Text(
+          'Order Memo',
+          style: TextStyle(
+              color: Colors.redAccent,
+              fontWeight: FontWeight.w900,
+              fontSize: 30),
+        ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
+      body: SingleChildScrollView(
         child: Column(
-          children: <Widget>[
-            TextField(
-              controller: nameController,
-              decoration: InputDecoration(labelText: '이름'),
+          children: [
+            Container(
+              color: Colors.redAccent,
+              height: 180,
             ),
-            TextField(
-              controller: manufactureDateController,
-              decoration: InputDecoration(labelText: '제조년월'),
-            ),
-            TextField(
-              controller: date,
-              decoration: InputDecoration(labelText: '성분'),
-            ),
-            TextField(
-              controller: origin,
-              decoration: InputDecoration(labelText: '원산지'),
-            ),
-            TextField(
-              controller: nutritionalInformation,
-              decoration: InputDecoration(labelText: '영양정보'),
-            ),
-            ElevatedButton(
-              child: Text('저장'),
-              onPressed: () {
-                setState(() {
-                  // TextField의 값을 가져와 foodDetails를 수정합니다.
-                  foodDetails['이름'] = nameController.text;
-                  foodDetails['제조년월'] = manufactureDateController.text;
-                  foodDetails['성분'] = date.text;
-                  foodDetails['원산지'] = origin.text;
-                  foodDetails['영양정보'] = nutritionalInformation.text;
+            Column(
+              children: [
+                Stack(
+                  children: [
+                    Container(
+                      color: Colors.redAccent,
+                      height: 900,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 10, bottom: 10),
+                      child: Image(
+                        image: NetworkImage(
+                            'https://cdn.discordapp.com/attachments/1128561724249886777/1128965742352678932/image.png'),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 0, vertical: 40),
+                      child: Container(
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 120, vertical: 0),
+                          child: Column(
+                            children: [
+                              TextField(
+                                controller: nameController,
+                                decoration: InputDecoration(
+                                  labelText: '이름',
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide:
+                                        BorderSide(color: Colors.redAccent),
+                                  ),
+                                ),
+                              ),
+                              TextField(
+                                controller: manufactureDateController,
+                                decoration: InputDecoration(
+                                  labelText: '제조년월',
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide:
+                                        BorderSide(color: Colors.redAccent),
+                                  ),
+                                ),
+                              ),
+                              TextField(
+                                controller: date,
+                                decoration: InputDecoration(
+                                  labelText: '성분',
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide:
+                                        BorderSide(color: Colors.redAccent),
+                                  ),
+                                ),
+                              ),
+                              TextField(
+                                controller: origin,
+                                decoration: InputDecoration(
+                                  labelText: '원산지',
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide:
+                                        BorderSide(color: Colors.redAccent),
+                                  ),
+                                ),
+                              ),
+                              TextField(
+                                controller: nutritionalInformation,
+                                decoration: InputDecoration(
+                                  labelText: '영양정보',
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide:
+                                        BorderSide(color: Colors.redAccent),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 330),
+                      child: Center(
+                        child: ElevatedButton(
+                          style: ButtonStyle(
+                            backgroundColor:
+                                MaterialStateProperty.all(Colors.white),
+                          ),
+                          child: Text(
+                            '저장',
+                            style: TextStyle(
+                                color: Colors.redAccent,
+                                fontWeight: FontWeight.w900,
+                                fontSize: 20),
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              // TextField의 값을 가져와 foodDetails를 수정합니다.
+                              foodDetails['이름'] = nameController.text;
+                              foodDetails['제조년월'] =
+                                  manufactureDateController.text;
+                              foodDetails['성분'] = date.text;
+                              foodDetails['원산지'] = origin.text;
+                              foodDetails['영양정보'] = nutritionalInformation.text;
 
-                  // TODO: 필요한 경우 다른 항목을 수정합니다.
-                });
-                Navigator.pop(context, foodDetails);
-              },
+                              // TODO: 필요한 경우 다른 항목을 수정합니다.
+                            });
+                            Navigator.pop(context, foodDetails);
+                          },
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
             ),
           ],
         ),
