@@ -36,6 +36,7 @@ class _ProfileState extends State<Profile> {
 
   @override
   Widget build(BuildContext context) {
+    final image = TextEditingController(text: '이미지');
     final nameController = TextEditingController(text: '이름');
     final manufactureDateController = TextEditingController(text: '제조년월');
     final date = TextEditingController(text: '성분');
@@ -66,6 +67,7 @@ class _ProfileState extends State<Profile> {
                 context,
                 MaterialPageRoute(
                   builder: (context) => EditPage(
+                    image: image,
                     foodDetails: foodDetails,
                     nameController: nameController,
                     manufactureDateController: manufactureDateController,
@@ -129,6 +131,15 @@ class _ProfileState extends State<Profile> {
                                 right: 30.0,
                                 top: 10.0,
                                 bottom: 10,
+                              ),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(150.0),
+                                child: Image(
+                                  image: NetworkImage("${foodDetails["이미지"]}"),
+                                  width: 280,
+                                  height: 280,
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                             ),
                           ],

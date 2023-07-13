@@ -7,6 +7,7 @@ import 'dart:convert';
 
 class EditPage extends StatelessWidget {
   // final Map<String, String> foodDetails;
+  final TextEditingController image;
   final TextEditingController nameController;
   final TextEditingController manufactureDateController;
   final TextEditingController date;
@@ -16,6 +17,7 @@ class EditPage extends StatelessWidget {
   const EditPage({
     Key? key,
     // required this.foodDetails,
+    required this.image,
     required this.nameController,
     required this.manufactureDateController,
     required this.date,
@@ -27,6 +29,7 @@ class EditPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var foodDetails = Provider.of<FoodDetails>(context).details;
+    image.text = foodDetails['이미지'] ?? '';
     nameController.text = foodDetails['이름'] ?? '';
     manufactureDateController.text = foodDetails['제조년월'] ?? '';
     date.text = foodDetails['성분'] ?? '';
@@ -166,6 +169,7 @@ class EditPage extends StatelessWidget {
                           ),
                           onPressed: () {
                             var updatedFoodDetails = {
+                              '이미지': image.text,
                               '이름': nameController.text,
                               '제조년월': manufactureDateController.text,
                               '성분': date.text,
