@@ -26,7 +26,6 @@ class _ProfileState extends State<Profile> {
     if (widget.foodDetails != null) {
       foodDetails = widget.foodDetails;
     }
-    ;
 
     switch (widget.foodName) {
       case "의정부부대버거A":
@@ -99,10 +98,13 @@ class _ProfileState extends State<Profile> {
 
       default:
         foodDetails = {
+          '이미지': 'aaa',
           '이름': '기본음식',
           '제조년월': '2023.01.01',
           '성분': '기본맛',
           '영양정보': '기본',
+          '깃허브': 'aaa',
+          '벨로그': 'aaa',
         };
         break;
     }
@@ -110,21 +112,21 @@ class _ProfileState extends State<Profile> {
 
   @override
   Widget build(BuildContext context) {
-    final nameController = TextEditingController(text: "foodDetails['이름']");
+    final nameController = TextEditingController(text: foodDetails['이름']);
     final manufactureDateController =
-        TextEditingController(text: "foodDetails['제조년월']");
-    final date = TextEditingController(text: "foodDetails['성분']");
-    final origin = TextEditingController(text: "foodDetails['원산지']");
+        TextEditingController(text: foodDetails['제조년월']);
+    final date = TextEditingController(text: foodDetails['성분']);
+    final origin = TextEditingController(text: foodDetails['원산지']);
     final nutritionalInformation =
-        TextEditingController(text: "foodDetails['영양정보']");
-    var foodDetails = Provider.of<FoodDetails>(context).details;
+        TextEditingController(text: foodDetails['영양정보']);
+    var providerFoodDetails = Provider.of<FoodDetails>(context).details;
 
     return Scaffold(
       appBar: AppBar(
         leading: BackButton(
           color: Colors.redAccent,
           onPressed: () {
-            Navigator.pop(context, foodDetails);
+            Navigator.pop(context, providerFoodDetails);
           },
         ),
         actions: [
@@ -140,7 +142,7 @@ class _ProfileState extends State<Profile> {
                 context,
                 MaterialPageRoute(
                   builder: (context) => EditPage(
-                    foodDetails: foodDetails,
+                    foodDetails: providerFoodDetails,
                     nameController: nameController,
                     manufactureDateController: manufactureDateController,
                     date: date,
@@ -150,10 +152,10 @@ class _ProfileState extends State<Profile> {
                 ),
               );
 
-              // 반환된 값을 확인하고, 있다면 foodDetails를 업데이트합니다.
+              // 반환된 값을 확인하고, 있다면 providerFoodDetails를 업데이트합니다.
               if (result != null) {
                 setState(() {
-                  foodDetails = result;
+                  providerFoodDetails = result;
                 });
               }
             },
@@ -207,7 +209,7 @@ class _ProfileState extends State<Profile> {
                               // child: ClipRRect(
                               //   borderRadius: BorderRadius.circular(150.0),
                               //   child: Image(
-                              //     image: NetworkImage(foodDetails["이미지"]),
+                              //     image: NetworkImage(providerFoodDetails["이미지"]),
                               //     width: 280,
                               //     height: 280,
                               //     fit: BoxFit.cover,
@@ -234,7 +236,7 @@ class _ProfileState extends State<Profile> {
                           borderRadius: BorderRadius.circular(10),
                           child: ElevatedButton(
                             onPressed: () {
-                              launch(foodDetails['깃허브']!);
+                              launch(providerFoodDetails['깃허브']!);
                             },
                             child: Image.network(
                               'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXqDKyfbUJ3bsDc5tPovwsAHicZqq5HIMDYPvmRzpdmg&s',
@@ -256,7 +258,7 @@ class _ProfileState extends State<Profile> {
                           borderRadius: BorderRadius.circular(10),
                           child: ElevatedButton(
                             onPressed: () {
-                              launch(foodDetails['벨로그']!);
+                              launch(providerFoodDetails['벨로그']!);
                             },
                             child: Image.network(
                               'https://velog.velcdn.com/images/velog/profile/9aa07f66-5fcd-41f4-84f2-91d73afcec28/green%20favicon.png',
@@ -296,7 +298,7 @@ class _ProfileState extends State<Profile> {
                         padding: const EdgeInsets.symmetric(
                             horizontal: 50, vertical: 20),
                         child: Text(
-                          "이름 : ${foodDetails['이름']}",
+                          "이름 : ${providerFoodDetails['이름']}",
                           style: TextStyle(
                             fontWeight: FontWeight.w900,
                             fontSize: 19,
@@ -332,7 +334,7 @@ class _ProfileState extends State<Profile> {
                         padding: const EdgeInsets.symmetric(
                             horizontal: 50, vertical: 20),
                         child: Text(
-                          "제조년월 : ${foodDetails['제조년월']}",
+                          "제조년월 : ${providerFoodDetails['제조년월']}",
                           style: TextStyle(
                             fontWeight: FontWeight.w900,
                             fontSize: 19,
@@ -368,7 +370,7 @@ class _ProfileState extends State<Profile> {
                         padding: const EdgeInsets.symmetric(
                             horizontal: 50, vertical: 20),
                         child: Text(
-                          "성분 : ${foodDetails['성분']}",
+                          "성분 : ${providerFoodDetails['성분']}",
                           style: TextStyle(
                             fontWeight: FontWeight.w900,
                             fontSize: 19,
@@ -404,7 +406,7 @@ class _ProfileState extends State<Profile> {
                         padding: const EdgeInsets.symmetric(
                             horizontal: 50, vertical: 20),
                         child: Text(
-                          "원산지 : ${foodDetails['원산지']}",
+                          "원산지 : ${providerFoodDetails['원산지']}",
                           style: TextStyle(
                             fontWeight: FontWeight.w900,
                             fontSize: 19,
@@ -440,7 +442,7 @@ class _ProfileState extends State<Profile> {
                         padding: const EdgeInsets.symmetric(
                             horizontal: 50, vertical: 20),
                         child: Text(
-                          "영양정보 : ${foodDetails['영양정보']}",
+                          "영양정보 : ${providerFoodDetails['영양정보']}",
                           style: TextStyle(
                             fontWeight: FontWeight.w900,
                             fontSize: 19,
