@@ -24,7 +24,8 @@ class _ProfileState extends State<Profile> {
     switch (widget.foodName) {
       case "의정부부대버거A":
         foodDetails = {
-          '이미지': 'https://i.ibb.co/NmyHtQc/2023-07-12-8-37-55.jpg',
+          '이미지':
+              'https://mblogthumb-phinf.pstatic.net/MjAxNzA4MjBfMTM5/MDAxNTAzMjM0MDkwNTg5.ttYjcybf_Od-SDC4LX-G_cbWjnYB2881WjrJZi5EIdsg.xtWB-23gpv-1iYusY89C5oYHkHx80E-cWm6vgbkCknwg.JPEG.jangkkoo/%EC%98%81%ED%99%94_%EA%B7%B8%EB%A0%98%EB%A6%B0_3_%EA%B0%81%EB%B3%B8_%EC%99%84%EB%A3%8C%2C_%EA%B8%B0%EC%A6%88%EB%AA%A8%EC%97%90_%EB%8C%80%ED%95%B4_%EC%95%8C%EB%A9%B4_%EB%8D%94_%EC%9E%AC%EB%AF%B8%EC%9E%88%EB%8A%94_9%EA%B0%80%EC%A7%80_%286%29.jpg?type=w800',
           '이름': '조계성',
           '제조년월': '1998.01.05',
           '성분': 'INTJ',
@@ -35,8 +36,9 @@ class _ProfileState extends State<Profile> {
 
       case "의정부부대버거B":
         foodDetails = {
+          '이미지': 'https://photo.cosplayfu.com/character/mini/24623_286445.jpg',
           '이름': '박철우',
-          '유통기한': '1993.04.18',
+          '제조년월': '1993.04.18',
           '성분': 'INTP',
           '원산지': '의정부',
           '영양정보': 'Carbohyrate',
@@ -45,8 +47,9 @@ class _ProfileState extends State<Profile> {
 
       case "대구닭강정":
         foodDetails = {
+          '이미지': 'https://avatars.githubusercontent.com/u/89556301?v=4',
           '이름': '김준우',
-          '유통기한': '1998.06.29',
+          '제조년월': '1998.06.29',
           '성분': 'ENTJ',
           '원산지': '대구',
           '영양정보': 'Iron content',
@@ -55,8 +58,10 @@ class _ProfileState extends State<Profile> {
 
       case "남양주닭갈비버거":
         foodDetails = {
+          '이미지':
+              'https://www.thedrive.co.kr/news/data/20230418/p1065613542337446_942_thum.PNG',
           '이름': '이시영',
-          '유통기한': '1989.04.15',
+          '제조년월': '1989.04.15',
           '성분': 'ENFJ',
           '원산지': '남양주',
           '영양정보': 'Hemoglobin',
@@ -65,8 +70,10 @@ class _ProfileState extends State<Profile> {
 
       case "수원갈비버거":
         foodDetails = {
+          '이미지':
+              'https://static.wikia.nocookie.net/pokemon/images/d/d0/%EA%BC%AC%EB%A7%88%EB%8F%8C_%EA%B3%B5%EC%8B%9D_%EC%9D%BC%EB%9F%AC%EC%8A%A4%ED%8A%B8.png/revision/latest?cb=20170405014701&path-prefix=ko',
           '이름': '조재민',
-          '유통기한': '1996.10.25',
+          '제조년월': '1996.10.25',
           '성분': 'INFP',
           '원산지': '수원',
           '영양정보': 'Protein',
