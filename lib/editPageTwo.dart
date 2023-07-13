@@ -165,7 +165,7 @@ class EditPage extends StatelessWidget {
                             ),
                           ),
                           onPressed: () {
-                            final updatedFoodDetails = {
+                            var updatedFoodDetails = {
                               '이름': nameController.text,
                               '제조년월': manufactureDateController.text,
                               '성분': date.text,

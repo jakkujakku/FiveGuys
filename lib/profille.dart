@@ -41,7 +41,9 @@ class _ProfileState extends State<Profile> {
     final date = TextEditingController(text: '성분');
     final origin = TextEditingController(text: '원산지');
     final nutritionalInformation = TextEditingController(text: '영양정보');
-    var foodDetails = Provider.of<FoodDetails>(context).details;
+    var foodDetailsProvider = Provider.of<FoodDetails>(context, listen: true);
+
+    var foodDetails = Provider.of<FoodDetails>(context, listen: true).details;
 
     return Scaffold(
       appBar: AppBar(
@@ -78,6 +80,7 @@ class _ProfileState extends State<Profile> {
                 setState(() {
                   foodDetails = result;
                 });
+                foodDetailsProvider.updateFoodDetails(widget.foodName, result);
               }
             },
           ),
