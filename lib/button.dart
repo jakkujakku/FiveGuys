@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'main.dart';
 
 class AButton extends StatelessWidget {
-  const AButton({super.key});
+  const AButton({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,11 @@ class AButton extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                  builder: (context) => Profile(foodName: "의정부부대버거A")),
+                builder: (context) => Profile(
+                  foodName: "의정부부대버거A",
+                  foodDetails: {},
+                ),
+              ),
             );
           },
           style: ElevatedButton.styleFrom(primary: Colors.white),
@@ -60,7 +64,7 @@ class AButton extends StatelessWidget {
 }
 
 class BButton extends StatelessWidget {
-  const BButton({super.key});
+  const BButton({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -71,7 +75,11 @@ class BButton extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                  builder: (context) => Profile(foodName: "의정부부대버거B")),
+                builder: (context) => Profile(
+                  foodName: "의정부부대버거B",
+                  foodDetails: {},
+                ),
+              ),
             );
           },
           style: ElevatedButton.styleFrom(primary: Colors.white),
@@ -99,7 +107,7 @@ class BButton extends StatelessWidget {
 }
 
 class CButton extends StatelessWidget {
-  const CButton({super.key});
+  const CButton({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -110,7 +118,11 @@ class CButton extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                  builder: (context) => Profile(foodName: "대구닭강정")),
+                builder: (context) => Profile(
+                  foodName: "대구닭강정",
+                  foodDetails: {},
+                ),
+              ),
             );
           },
           style: ElevatedButton.styleFrom(primary: Colors.white),
@@ -138,7 +150,7 @@ class CButton extends StatelessWidget {
 }
 
 class DButton extends StatelessWidget {
-  const DButton({super.key});
+  const DButton({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -149,7 +161,11 @@ class DButton extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                  builder: (context) => Profile(foodName: "남양주닭갈비버거")),
+                builder: (context) => Profile(
+                  foodName: "남양주닭갈비버거",
+                  foodDetails: {},
+                ),
+              ),
             );
           },
           style: ElevatedButton.styleFrom(primary: Colors.white),
@@ -177,7 +193,7 @@ class DButton extends StatelessWidget {
 }
 
 class EButton extends StatelessWidget {
-  const EButton({super.key});
+  const EButton({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -188,7 +204,11 @@ class EButton extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                  builder: (context) => Profile(foodName: "수원갈비버거")),
+                builder: (context) => Profile(
+                  foodName: "수원갈비버거",
+                  foodDetails: {},
+                ),
+              ),
             );
           },
           style: ElevatedButton.styleFrom(primary: Colors.white),

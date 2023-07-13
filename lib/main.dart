@@ -1,12 +1,16 @@
 import 'package:fiveguys/button.dart';
-import 'package:fiveguys/editPage.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'editPage.dart';
 import 'editPageTwo.dart';
+import 'foodDetail.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => FoodDetails(),
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
