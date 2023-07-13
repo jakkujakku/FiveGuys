@@ -23,45 +23,50 @@ class _ProfileState extends State<Profile> {
       case "의정부부대버거A":
         foodDetails = {
           '이름': '조계성',
-          '유통기한': '2023.12.31',
+          '제조년월': '1998.01.05',
           '성분': 'INTJ',
           '원산지': '의정부',
+          '영양정보': 'Omega3',
         };
         break;
 
       case "의정부부대버거B":
         foodDetails = {
           '이름': '박철우',
-          '유통기한': '2023.12.31',
+          '유통기한': '1993.04.18',
           '성분': 'INTP',
           '원산지': '의정부',
+          '영양정보': 'Carbohyrate',
         };
         break;
 
       case "대구닭강정":
         foodDetails = {
           '이름': '김준우',
-          '유통기한': '2023.12.31',
+          '유통기한': '1998.06.29',
           '성분': 'ENTJ',
           '원산지': '대구',
+          '영양정보': 'Iron content',
         };
         break;
 
       case "남양주닭갈비버거":
         foodDetails = {
           '이름': '이시영',
-          '유통기한': '2023.12.31',
+          '유통기한': '1989.04.15',
           '성분': 'ENFJ',
           '원산지': '남양주',
+          '영양정보': 'Hemoglobin',
         };
         break;
 
       case "수원갈비버거":
         foodDetails = {
           '이름': '조재민',
-          '유통기한': '2023.12.31',
+          '유통기한': '1996.10.25',
           '성분': 'INFP',
           '원산지': '수원',
+          '영양정보': 'Protein',
         };
         break;
 
@@ -112,7 +117,7 @@ class _ProfileState extends State<Profile> {
       body: SingleChildScrollView(
         child: Container(
           color: Colors.redAccent,
-          height: 1200,
+          height: 2000,
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 30),
             child: Column(
@@ -184,7 +189,7 @@ class _ProfileState extends State<Profile> {
                         padding: const EdgeInsets.symmetric(
                             horizontal: 50, vertical: 0.5),
                         child: Text(
-                          "이름 : ${foodDetails['Name']}",
+                          "이름 : ${foodDetails['이름']}",
                           style: TextStyle(
                               fontWeight: FontWeight.w300,
                               fontSize: 19,
@@ -219,7 +224,7 @@ class _ProfileState extends State<Profile> {
                         padding: const EdgeInsets.symmetric(
                             horizontal: 50, vertical: 0.5),
                         child: Text(
-                          "이름 : ${foodDetails['Name']}",
+                          "제조년월 : ${foodDetails['제조년월']}",
                           style: TextStyle(
                               fontWeight: FontWeight.w300,
                               fontSize: 19,
@@ -254,7 +259,7 @@ class _ProfileState extends State<Profile> {
                         padding: const EdgeInsets.symmetric(
                             horizontal: 50, vertical: 0.5),
                         child: Text(
-                          "이름 : ${foodDetails['Name']}",
+                          "성분 : ${foodDetails['성분']}",
                           style: TextStyle(
                               fontWeight: FontWeight.w300,
                               fontSize: 19,
@@ -289,7 +294,7 @@ class _ProfileState extends State<Profile> {
                         padding: const EdgeInsets.symmetric(
                             horizontal: 50, vertical: 0.5),
                         child: Text(
-                          "이름 : ${foodDetails['Name']}",
+                          "원산지 : ${foodDetails['원산지']}",
                           style: TextStyle(
                               fontWeight: FontWeight.w300,
                               fontSize: 19,
@@ -324,7 +329,7 @@ class _ProfileState extends State<Profile> {
                         padding: const EdgeInsets.symmetric(
                             horizontal: 50, vertical: 0.5),
                         child: Text(
-                          "이름 : ${foodDetails['Name']}",
+                          "영양정보 : ${foodDetails['영양정보']}",
                           style: TextStyle(
                               fontWeight: FontWeight.w300,
                               fontSize: 19,
@@ -336,38 +341,6 @@ class _ProfileState extends State<Profile> {
                 ),
                 SizedBox(
                   height: 25,
-                ),
-                Center(
-                  child: Stack(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(
-                          left: 15,
-                        ),
-                        child: Container(
-                          height: 60,
-                          width: 380,
-                          decoration: new BoxDecoration(
-                            borderRadius: new BorderRadius.all(
-                              Radius.circular(20),
-                            ),
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 50, vertical: 0.5),
-                        child: Text(
-                          "이름 : ${foodDetails['Name']}",
-                          style: TextStyle(
-                              fontWeight: FontWeight.w300,
-                              fontSize: 19,
-                              wordSpacing: 4),
-                        ),
-                      ),
-                    ],
-                  ),
                 ),
                 SizedBox(
                   height: 25,
