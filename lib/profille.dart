@@ -1,8 +1,80 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'main.dart';
 
-class edit extends StatelessWidget {
-  const edit({Key? key}) : super(key: key);
+import 'editPage.dart';
+
+class Profile extends StatefulWidget {
+  final String foodName;
+
+  const Profile({Key? key, required this.foodName}) : super(key: key);
+
+  @override
+  _ProfileState createState() => _ProfileState();
+}
+
+class _ProfileState extends State<Profile> {
+  Map<String, String> foodDetails = {};
+
+  @override
+  void initState() {
+    super.initState();
+
+    switch (widget.foodName) {
+      case "의정부부대버거A":
+        foodDetails = {
+          '이름': '조계성',
+          '유통기한': '2023.12.31',
+          '성분': 'INTJ',
+          '원산지': '의정부',
+        };
+        break;
+
+      case "의정부부대버거B":
+        foodDetails = {
+          '이름': '박철우',
+          '유통기한': '2023.12.31',
+          '성분': 'INTP',
+          '원산지': '의정부',
+        };
+        break;
+
+      case "대구닭강정":
+        foodDetails = {
+          '이름': '김준우',
+          '유통기한': '2023.12.31',
+          '성분': 'ENTJ',
+          '원산지': '대구',
+        };
+        break;
+
+      case "남양주닭갈비버거":
+        foodDetails = {
+          '이름': '이시영',
+          '유통기한': '2023.12.31',
+          '성분': 'ENFJ',
+          '원산지': '남양주',
+        };
+        break;
+
+      case "수원갈비버거":
+        foodDetails = {
+          '이름': '조재민',
+          '유통기한': '2023.12.31',
+          '성분': 'INFP',
+          '원산지': '수원',
+        };
+        break;
+
+      default:
+        foodDetails = {
+          'Name': '기본음식',
+          'Date': '2023.01.01',
+          'Taste': '기본맛',
+          'Origin': '기본',
+        };
+        break;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +91,10 @@ class edit extends StatelessWidget {
             icon: Icon(Icons.edit),
             color: Colors.redAccent,
             onPressed: () {
-              print("Edit 버튼 눌렀다.");
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => edit()),
+              );
             },
           ),
         ],
@@ -61,7 +136,7 @@ class edit extends StatelessWidget {
                           children: [
                             Padding(
                               padding: EdgeInsets.only(
-                                left: 55.0,
+                                left: 65.0,
                                 right: 30.0,
                                 top: 10.0,
                                 bottom: 10,
@@ -103,13 +178,10 @@ class edit extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 10, vertical: 5),
-                        child: TextField(
-                          decoration: InputDecoration(labelText: 'Input'),
-                          textAlign: TextAlign.center,
-                        ),
+                      TextField(
+                        decoration: InputDecoration(labelText: 'Input'),
+                        textAlign: TextAlign.center,
+                        cursorWidth: 10,
                       ),
                     ],
                   ),
