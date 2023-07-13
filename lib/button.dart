@@ -1,4 +1,5 @@
-import 'package:fiveguys/profilePage.dart';
+import 'package:fiveguys/profille.dart';
+import 'package:fiveguys/profille.dart';
 import 'package:flutter/material.dart';
 import 'main.dart';
 

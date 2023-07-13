@@ -111,8 +111,10 @@ class _ProfileState extends State<Profile> {
       ),
       body: SingleChildScrollView(
         child: Container(
+          color: Colors.redAccent,
+          height: 1200,
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 50),
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 30),
             child: Column(
               children: [
                 Stack(
@@ -158,7 +160,7 @@ class _ProfileState extends State<Profile> {
                   ],
                 ),
                 SizedBox(
-                  height: 25,
+                  height: 30,
                 ),
                 Center(
                   child: Stack(
@@ -178,10 +180,16 @@ class _ProfileState extends State<Profile> {
                           ),
                         ),
                       ),
-                      TextField(
-                        decoration: InputDecoration(labelText: 'Input'),
-                        textAlign: TextAlign.center,
-                        cursorWidth: 10,
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 50, vertical: 0.5),
+                        child: Text(
+                          "이름 : ${foodDetails['Name']}",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w300,
+                              fontSize: 19,
+                              wordSpacing: 4),
+                        ),
                       ),
                     ],
                   ),
@@ -207,10 +215,16 @@ class _ProfileState extends State<Profile> {
                           ),
                         ),
                       ),
-                      TextField(
-                        decoration: InputDecoration(labelText: 'Input'),
-                        textAlign: TextAlign.center,
-                        cursorWidth: 10,
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 50, vertical: 0.5),
+                        child: Text(
+                          "이름 : ${foodDetails['Name']}",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w300,
+                              fontSize: 19,
+                              wordSpacing: 4),
+                        ),
                       ),
                     ],
                   ),
@@ -236,10 +250,16 @@ class _ProfileState extends State<Profile> {
                           ),
                         ),
                       ),
-                      TextField(
-                        decoration: InputDecoration(labelText: 'Input'),
-                        textAlign: TextAlign.center,
-                        cursorWidth: 10,
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 50, vertical: 0.5),
+                        child: Text(
+                          "이름 : ${foodDetails['Name']}",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w300,
+                              fontSize: 19,
+                              wordSpacing: 4),
+                        ),
                       ),
                     ],
                   ),
@@ -265,10 +285,16 @@ class _ProfileState extends State<Profile> {
                           ),
                         ),
                       ),
-                      TextField(
-                        decoration: InputDecoration(labelText: 'Input'),
-                        textAlign: TextAlign.center,
-                        cursorWidth: 10,
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 50, vertical: 0.5),
+                        child: Text(
+                          "이름 : ${foodDetails['Name']}",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w300,
+                              fontSize: 19,
+                              wordSpacing: 4),
+                        ),
                       ),
                     ],
                   ),
@@ -294,10 +320,51 @@ class _ProfileState extends State<Profile> {
                           ),
                         ),
                       ),
-                      TextField(
-                        decoration: InputDecoration(labelText: 'Input'),
-                        textAlign: TextAlign.center,
-                        cursorWidth: 10,
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 50, vertical: 0.5),
+                        child: Text(
+                          "이름 : ${foodDetails['Name']}",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w300,
+                              fontSize: 19,
+                              wordSpacing: 4),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 25,
+                ),
+                Center(
+                  child: Stack(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          left: 15,
+                        ),
+                        child: Container(
+                          height: 60,
+                          width: 380,
+                          decoration: new BoxDecoration(
+                            borderRadius: new BorderRadius.all(
+                              Radius.circular(20),
+                            ),
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 50, vertical: 0.5),
+                        child: Text(
+                          "이름 : ${foodDetails['Name']}",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w300,
+                              fontSize: 19,
+                              wordSpacing: 4),
+                        ),
                       ),
                     ],
                   ),
@@ -308,8 +375,6 @@ class _ProfileState extends State<Profile> {
               ],
             ),
           ),
-          color: Colors.red,
-          height: 900,
         ),
       ),
     );
