@@ -5,7 +5,7 @@ import 'foodDetail.dart';
 import 'main.dart';
 import 'dart:convert';
 
-class EditPage extends StatelessWidget {
+class EditPage extends StatefulWidget {
   // final Map<String, String> foodDetails;
   final TextEditingController image;
   final TextEditingController nameController;
@@ -27,19 +27,48 @@ class EditPage extends StatelessWidget {
   }) : super(key: key);
 
   @override
+  State<EditPage> createState() => _EditPageState();
+}
+
+class _EditPageState extends State<EditPage> {
+  @override
   Widget build(BuildContext context) {
     var foodDetails = Provider.of<FoodDetails>(context).details;
-    image.text = foodDetails['이미지'] ?? '';
-    nameController.text = foodDetails['이름'] ?? '';
-    manufactureDateController.text = foodDetails['제조년월'] ?? '';
-    date.text = foodDetails['성분'] ?? '';
-    origin.text = foodDetails['원산지'] ?? '';
-    nutritionalInformation.text = foodDetails['영양정보'] ?? '';
+    widget.image.text = foodDetails['이미지'] ?? '';
+    widget.nameController.text = foodDetails['이름'] ?? '';
+    widget.manufactureDateController.text = foodDetails['제조년월'] ?? '';
+    widget.date.text = foodDetails['성분'] ?? '';
+    widget.origin.text = foodDetails['원산지'] ?? '';
+    widget.nutritionalInformation.text = foodDetails['영양정보'] ?? '';
 
     return Scaffold(
+      //
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.white,
+        leading: IconButton(
+            onPressed: () {
+              setState(() {
+                // TextField의 값을 가져와 foodDetails를 수정합니다.
+                foodDetails['이름'] = widget.nameController.text;
+                foodDetails['제조년월'] = widget.manufactureDateController.text;
+                foodDetails['성분'] = widget.date.text;
+                foodDetails['원산지'] = widget.origin.text;
+                foodDetails['영양정보'] = widget.nutritionalInformation.text;
+
+                // TODO: 필요한 경우 다른 항목을 수정합니다.
+              });
+              Navigator.pop(context, foodDetails);
+            },
+            icon: Text(
+              "Done",
+              style: TextStyle(
+                  color: Colors.redAccent,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15),
+            )),
+        //Done 버튼
+
         title: Text(
           'Order Memo',
           style: TextStyle(
@@ -73,11 +102,15 @@ class EditPage extends StatelessWidget {
                         fit: BoxFit.cover,
                       ),
                     ),
-                    // Image(
-                    //   image: NetworkImage(''),
-                    //   width: 10,
-                    //   height: 10,
-                    // ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 320, top: 300),
+                      child: Image(
+                        image: NetworkImage(
+                            'https://cdn.discordapp.com/attachments/1128561724249886777/1129003548739387392/image.png'),
+                        width: 200,
+                        height: 200,
+                      ),
+                    ),
                     Padding(
                       padding: const EdgeInsets.symmetric(
                         horizontal: 0,
@@ -92,7 +125,7 @@ class EditPage extends StatelessWidget {
                           child: Column(
                             children: [
                               TextField(
-                                controller: nameController,
+                                controller: widget.nameController,
                                 decoration: InputDecoration(
                                   labelText: '이름',
                                   focusedBorder: OutlineInputBorder(
@@ -103,7 +136,7 @@ class EditPage extends StatelessWidget {
                                 ),
                               ),
                               TextField(
-                                controller: manufactureDateController,
+                                controller: widget.manufactureDateController,
                                 decoration: InputDecoration(
                                   labelText: '제조년월',
                                   focusedBorder: OutlineInputBorder(
@@ -114,7 +147,7 @@ class EditPage extends StatelessWidget {
                                 ),
                               ),
                               TextField(
-                                controller: date,
+                                controller: widget.date,
                                 decoration: InputDecoration(
                                   labelText: '성분',
                                   focusedBorder: OutlineInputBorder(
@@ -125,7 +158,7 @@ class EditPage extends StatelessWidget {
                                 ),
                               ),
                               TextField(
-                                controller: origin,
+                                controller: widget.origin,
                                 decoration: InputDecoration(
                                   labelText: '원산지',
                                   focusedBorder: OutlineInputBorder(
@@ -136,7 +169,7 @@ class EditPage extends StatelessWidget {
                                 ),
                               ),
                               TextField(
-                                controller: nutritionalInformation,
+                                controller: widget.nutritionalInformation,
                                 decoration: InputDecoration(
                                   labelText: '영양정보',
                                   focusedBorder: OutlineInputBorder(
@@ -152,29 +185,20 @@ class EditPage extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(top: 330),
+                      padding: const EdgeInsets.only(top: 290, left: 210),
                       child: Center(
-                        child: ElevatedButton(
-                          style: ButtonStyle(
-                            backgroundColor:
-                                MaterialStateProperty.all(Colors.white),
-                          ),
-                          child: Text(
-                            '저장',
-                            style: TextStyle(
-                              color: Colors.redAccent,
-                              fontWeight: FontWeight.w900,
-                              fontSize: 20,
-                            ),
-                          ),
+                        child: IconButton(
+                          icon: Icon(Icons.check),
+                          iconSize: 40,
+                          color: const Color.fromARGB(255, 47, 230, 53),
                           onPressed: () {
                             var updatedFoodDetails = {
-                              '이미지': image.text,
-                              '이름': nameController.text,
-                              '제조년월': manufactureDateController.text,
-                              '성분': date.text,
-                              '원산지': origin.text,
-                              '영양정보': nutritionalInformation.text,
+                              '이미지': widget.image.text,
+                              '이름': widget.nameController.text,
+                              '제조년월': widget.manufactureDateController.text,
+                              '성분': widget.date.text,
+                              '원산지': widget.origin.text,
+                              '영양정보': widget.nutritionalInformation.text,
                             };
 
                             Provider.of<FoodDetails>(context, listen: false)

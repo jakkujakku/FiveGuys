@@ -385,15 +385,6 @@ class _ProfileState extends State<Profile> {
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        elevation: 28,
-        backgroundColor: Color.fromARGB(255, 20, 1, 1),
-        child: Icon(
-          Icons.star_border_outlined,
-          color: Colors.white,
-        ),
-        onPressed: () {},
-      ),
     );
   }
 }

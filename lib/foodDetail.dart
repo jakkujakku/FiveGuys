@@ -30,6 +30,38 @@ class FoodDetails extends ChangeNotifier {
       '깃허브': 'https://github.com/jakkujakku/FiveGuys',
       '벨로그': 'https://velog.io/@churoo',
     },
+    "대구따로버거": {
+      '이미지': 'https://avatars.githubusercontent.com/u/89556301?v=4',
+      '이름': '김준우',
+      '제조년월': '1998.06.29',
+      '성분': 'ENTJ',
+      '원산지': '대구',
+      '영양정보': 'Iron content',
+      '깃허브': 'https://github.com/jakkujakku/FiveGuys',
+      '벨로그': "https://velog.io/@jakkujakku98",
+    },
+    "남양주닭갈비버거": {
+      '이미지':
+          'https://www.thedrive.co.kr/news/data/20230418/p1065613542337446_942_thum.PNG',
+      '이름': '이시영',
+      '제조년월': '1989.04.15',
+      '성분': 'ENFJ',
+      '원산지': '남양주',
+      '영양정보': 'Hemoglobin',
+      '깃허브': 'https://github.com/jakkujakku/FiveGuys',
+      '벨로그': "https://velog.io/@code_dang",
+    },
+    "수원갈비버거": {
+      '이미지':
+          'https://static.wikia.nocookie.net/pokemon/images/d/d0/%EA%BC%AC%EB%A7%88%EB%8F%8C_%EA%B3%B5%EC%8B%9D_%EC%9D%BC%EB%9F%AC%EC%8A%A4%ED%8A%B8.png/revision/latest?cb=20170405014701&path-prefix=ko',
+      '이름': '조재민',
+      '제조년월': '1996.10.25',
+      '성분': 'INFP',
+      '원산지': '수원',
+      '영양정보': 'Protein',
+      '깃허브': 'https://github.com/jakkujakku/FiveGuys',
+      '벨로그': 'https://user2rum.tistory.com/ ',
+    },
     // Add more food details here...
   };
 
