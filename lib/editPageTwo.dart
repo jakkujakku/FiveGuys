@@ -24,6 +24,9 @@ class _EditPageState extends State<EditPage> {
   late Map<String, String> foodDetails;
   late TextEditingController nameController;
   late TextEditingController manufactureDateController;
+  late TextEditingController date;
+  late TextEditingController origin;
+  late TextEditingController nutritionalInformation;
   // TODO: 필요한 경우 다른 컨트롤러를 추가합니다.
 
   @override
@@ -35,7 +38,10 @@ class _EditPageState extends State<EditPage> {
     nameController = TextEditingController(text: foodDetails['이름']);
     manufactureDateController =
         TextEditingController(text: foodDetails['제조년월']);
-    // TODO: 필요한 경우 다른 컨트롤러를 초기화합니다.
+    date = TextEditingController(text: foodDetails['성분']);
+    origin = TextEditingController(text: foodDetails['원산지']);
+    nutritionalInformation = TextEditingController(
+        text: foodDetails['영양정보']); // TODO: 필요한 경우 다른 컨트롤러를 초기화합니다.
   }
 
   @override
@@ -66,7 +72,18 @@ class _EditPageState extends State<EditPage> {
               controller: manufactureDateController,
               decoration: InputDecoration(labelText: '제조년월'),
             ),
-            // TODO: 필요한 경우 다른 TextField를 추가합니다.
+            TextField(
+              controller: date,
+              decoration: InputDecoration(labelText: '성분'),
+            ),
+            TextField(
+              controller: origin,
+              decoration: InputDecoration(labelText: '원산지'),
+            ),
+            TextField(
+              controller: nutritionalInformation,
+              decoration: InputDecoration(labelText: '영양정보'),
+            ),
             ElevatedButton(
               child: Text('저장'),
               onPressed: () {
@@ -74,6 +91,10 @@ class _EditPageState extends State<EditPage> {
                   // TextField의 값을 가져와 foodDetails를 수정합니다.
                   foodDetails['이름'] = nameController.text;
                   foodDetails['제조년월'] = manufactureDateController.text;
+                  foodDetails['성분'] = date.text;
+                  foodDetails['원산지'] = origin.text;
+                  foodDetails['영양정보'] = nutritionalInformation.text;
+
                   // TODO: 필요한 경우 다른 항목을 수정합니다.
                 });
                 Navigator.pop(context, foodDetails);
