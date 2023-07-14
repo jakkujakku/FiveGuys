@@ -3,27 +3,45 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'foodDetail.dart';
 import 'main.dart';
+import 'dart:convert';
 
 class EditPage extends StatelessWidget {
-  final Map<String, String> foodDetails;
+  // final Map<String, String> foodDetails;
+  final TextEditingController image;
   final TextEditingController nameController;
   final TextEditingController manufactureDateController;
   final TextEditingController date;
   final TextEditingController origin;
   final TextEditingController nutritionalInformation;
+  final TextEditingController github;
+  final TextEditingController velog;
 
   const EditPage({
     Key? key,
-    required this.foodDetails,
+    // required this.foodDetails,
+    required this.image,
     required this.nameController,
     required this.manufactureDateController,
     required this.date,
     required this.origin,
     required this.nutritionalInformation,
+    required this.github,
+    required this.velog,
+    required Map<String, String> foodDetails,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    var foodDetails = Provider.of<FoodDetails>(context).details;
+    image.text = foodDetails['이미지'] ?? '';
+    nameController.text = foodDetails['이름'] ?? '';
+    manufactureDateController.text = foodDetails['제조년월'] ?? '';
+    date.text = foodDetails['성분'] ?? '';
+    origin.text = foodDetails['원산지'] ?? '';
+    nutritionalInformation.text = foodDetails['영양정보'] ?? '';
+    github.text = foodDetails['깃허브'] ?? '';
+    velog.text = foodDetails['벨로그'] ?? '';
+
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -61,11 +79,11 @@ class EditPage extends StatelessWidget {
                         fit: BoxFit.cover,
                       ),
                     ),
-                    Image(
-                      image: NetworkImage(''),
-                      width: 10,
-                      height: 10,
-                    ),
+                    // Image(
+                    //   image: NetworkImage(''),
+                    //   width: 10,
+                    //   height: 10,
+                    // ),
                     Padding(
                       padding: const EdgeInsets.symmetric(
                         horizontal: 0,
@@ -156,16 +174,22 @@ class EditPage extends StatelessWidget {
                             ),
                           ),
                           onPressed: () {
-                            final updatedFoodDetails = {
+                            var updatedFoodDetails = {
+                              '이미지': image.text,
                               '이름': nameController.text,
                               '제조년월': manufactureDateController.text,
                               '성분': date.text,
                               '원산지': origin.text,
                               '영양정보': nutritionalInformation.text,
+                              '깃허브': github.text,
+                              '벨로그': velog.text,
                             };
 
                             Provider.of<FoodDetails>(context, listen: false)
                                 .details = updatedFoodDetails;
+
+                            String json = jsonEncode(updatedFoodDetails);
+                            print(json);
 
                             Navigator.pop(context, updatedFoodDetails);
                           },
