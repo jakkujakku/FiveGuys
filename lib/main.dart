@@ -68,14 +68,7 @@ class FirstPage extends StatelessWidget {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 80, vertical: 16),
                   child: Row(
-                    children: [
-                      Spacer(
-                        flex: 1,
-                      ),
-                      EButton(),
-                      Spacer(),
-                      DButton()
-                    ],
+                    children: [EButton(), Spacer(), DButton()],
                   ),
                 )
               ],

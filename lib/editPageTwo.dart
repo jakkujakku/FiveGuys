@@ -13,6 +13,8 @@ class EditPage extends StatefulWidget {
   final TextEditingController date;
   final TextEditingController origin;
   final TextEditingController nutritionalInformation;
+  final TextEditingController github;
+  final TextEditingController velog;
 
   const EditPage({
     Key? key,
@@ -23,6 +25,8 @@ class EditPage extends StatefulWidget {
     required this.date,
     required this.origin,
     required this.nutritionalInformation,
+    required this.github,
+    required this.velog,
     required Map<String, String> foodDetails,
   }) : super(key: key);
 
@@ -40,6 +44,8 @@ class _EditPageState extends State<EditPage> {
     widget.date.text = foodDetails['성분'] ?? '';
     widget.origin.text = foodDetails['원산지'] ?? '';
     widget.nutritionalInformation.text = foodDetails['영양정보'] ?? '';
+    widget.github.text = foodDetails['깃허브'] ?? '';
+    widget.velog.text = foodDetails['벨로그'] ?? '';
 
     return Scaffold(
       //
@@ -55,6 +61,8 @@ class _EditPageState extends State<EditPage> {
                 foodDetails['성분'] = widget.date.text;
                 foodDetails['원산지'] = widget.origin.text;
                 foodDetails['영양정보'] = widget.nutritionalInformation.text;
+                foodDetails['깃허브'] = widget.image.text;
+                foodDetails['벨로그'] = widget.image.text;
                 foodDetails['깃허브'] = widget.image.text;
                 foodDetails['벨로그'] = widget.image.text;
 
@@ -201,8 +209,8 @@ class _EditPageState extends State<EditPage> {
                               '성분': widget.date.text,
                               '원산지': widget.origin.text,
                               '영양정보': widget.nutritionalInformation.text,
-                              '깃허브': widget.image.text,
-                              '벨로그': widget.image.text,
+                              '깃허브': widget.github.text,
+                              '벨로그': widget.velog.text,
                             };
 
                             Provider.of<FoodDetails>(context, listen: false)

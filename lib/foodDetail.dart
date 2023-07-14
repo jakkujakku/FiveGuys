@@ -60,7 +60,7 @@ class FoodDetails extends ChangeNotifier {
       '원산지': '수원',
       '영양정보': 'Protein',
       '깃허브': 'https://github.com/jakkujakku/FiveGuys',
-      '벨로그': 'https://velog.io/@user2rum ',
+      '벨로그': 'https://velog.io/@user2rum',
     },
     // Add more food details here...
   };

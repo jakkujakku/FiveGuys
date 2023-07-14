@@ -42,6 +42,9 @@ class _ProfileState extends State<Profile> {
     final date = TextEditingController(text: '성분');
     final origin = TextEditingController(text: '원산지');
     final nutritionalInformation = TextEditingController(text: '영양정보');
+    final github = TextEditingController(text: '깃허브');
+    final velog = TextEditingController(text: '벨로그');
+
     var foodDetailsProvider = Provider.of<FoodDetails>(context, listen: true);
 
     var foodDetails = Provider.of<FoodDetails>(context, listen: true).details;
@@ -74,6 +77,8 @@ class _ProfileState extends State<Profile> {
                     date: date,
                     origin: origin,
                     nutritionalInformation: nutritionalInformation,
+                    github: github,
+                    velog: velog,
                   ),
                 ),
               );
