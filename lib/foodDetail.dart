@@ -49,7 +49,7 @@ class FoodDetails extends ChangeNotifier {
       '원산지': '남양주',
       '영양정보': 'Hemoglobin',
       '깃허브': 'https://github.com/jakkujakku/FiveGuys',
-      '벨로그': "https://velog.io/@code_dang",
+      '벨로그': 'https://velog.io/@code_dang',
     },
     "수원갈비버거": {
       '이미지':
@@ -60,7 +60,7 @@ class FoodDetails extends ChangeNotifier {
       '원산지': '수원',
       '영양정보': 'Protein',
       '깃허브': 'https://github.com/jakkujakku/FiveGuys',
-      '벨로그': 'https://user2rum.tistory.com/ ',
+      '벨로그': 'https://velog.io/@user2rum ',
     },
     // Add more food details here...
   };

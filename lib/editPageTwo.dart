@@ -55,6 +55,8 @@ class _EditPageState extends State<EditPage> {
                 foodDetails['성분'] = widget.date.text;
                 foodDetails['원산지'] = widget.origin.text;
                 foodDetails['영양정보'] = widget.nutritionalInformation.text;
+                foodDetails['깃허브'] = widget.image.text;
+                foodDetails['벨로그'] = widget.image.text;
 
                 // TODO: 필요한 경우 다른 항목을 수정합니다.
               });
@@ -199,6 +201,8 @@ class _EditPageState extends State<EditPage> {
                               '성분': widget.date.text,
                               '원산지': widget.origin.text,
                               '영양정보': widget.nutritionalInformation.text,
+                              '깃허브': widget.image.text,
+                              '벨로그': widget.image.text,
                             };
 
                             Provider.of<FoodDetails>(context, listen: false)
